@@ -1,0 +1,7 @@
+{
+  "name": "EduAI 2.0",
+  "description": "A pedagogical platform offering personalized AI-generated lesson plans and a virtual tutor.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

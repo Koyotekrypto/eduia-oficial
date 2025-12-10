@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>EduAI - Professor Virtual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+      :root {
+        --ios-blue: #007AFF;
+        --ios-indigo: #5856D6;
+        --ios-bg: #F2F2F7;
+        --ios-card: #FFFFFF;
+        --ios-text: #1C1C1E;
+        --ios-gray: #8E8E93;
+        --ios-separator: #C6C6C8;
+      }
+
+      body { 
+        font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; 
+        background-color: var(--ios-bg);
+        color: var(--ios-text);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overscroll-behavior-y: none; /* Prevent rubber-banding on body */
+      }
+
+      /* iOS Scrollbar Hiding but functional */
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+
+      /* Horizontal Snap Scrolling */
+      .snap-x-mandatory {
+        scroll-snap-type: x mandatory;
+      }
+      .snap-center {
+        scroll-snap-align: center;
+      }
+
+      /* Glassmorphism Utilities */
+      .glass {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .glass-dark {
+        background: rgba(28, 28, 30, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+
+      /* Micro-interactions */
+      .tap-scale {
+        transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .tap-scale:active {
+        transform: scale(0.96);
+      }
+
+      /* Animations */
+      @keyframes fade-in {
+        from { opacity: 0; transform: scale(0.98); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes slide-up {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 15px rgba(0, 122, 255, 0.3); }
+        50% { box-shadow: 0 0 25px rgba(0, 122, 255, 0.6); }
+      }
+      
+      .animate-fade-in { animation: fade-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+      .animate-slide-up { animation: slide-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+      .animate-float { animation: float 6s ease-in-out infinite; }
+      
+      /* Card Depth */
+      .ios-card-shadow {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+      }
+      
+      /* Inputs */
+      .ios-input {
+        background: #E5E5EA; /* iOS System Gray 6 */
+        border: none;
+        transition: all 0.2s;
+      }
+      .ios-input:focus {
+        background: #FFFFFF;
+        box-shadow: 0 0 0 2px var(--ios-blue);
+      }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
